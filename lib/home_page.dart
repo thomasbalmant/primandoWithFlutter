@@ -15,16 +15,18 @@ class HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Home Page'),
       ),
-      body: Center(
-          child: GestureDetector(
-        child: Text(
-          'Contador: $counter',
-          // ignore: prefer_const_constructors
-          style: TextStyle(
-            fontSize: 40,
-          ),
-        ),
-      )),
+      body: Container(
+          height: 200,
+          width: 200,
+          color: Colors.deepOrange,
+          child: Center(
+            child: Container(
+              height: 100,
+              width: 100,
+              color: Colors.lime,
+              child: Text('$counter'),
+            ),
+          )),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.coronavirus, color: Colors.deepOrange, size: 40.0),
         onPressed: () {
