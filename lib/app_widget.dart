@@ -6,7 +6,8 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.lightBlue),
+      theme: ThemeData(
+          primarySwatch: Colors.lightBlue, brightness: Brightness.light),
       home: HomePage(),
     );
   }
