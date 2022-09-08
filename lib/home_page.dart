@@ -15,14 +15,6 @@ class HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Home Page'),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add, color: Colors.deepOrange, size: 40.0),
-        onPressed: () {
-          setState(() {
-            counter++;
-          });
-        },
-      ),
       body: Center(
           child: GestureDetector(
         child: Text(
@@ -33,6 +25,14 @@ class HomePageState extends State<HomePage> {
           ),
         ),
       )),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.coronavirus, color: Colors.deepOrange, size: 40.0),
+        onPressed: () {
+          setState(() {
+            counter++;
+          });
+        },
+      ),
     );
   }
 }
