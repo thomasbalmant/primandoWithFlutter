@@ -15,14 +15,27 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home Page'),
+        actions: [CustomSwitcher()],
       ),
-      body: Center(
-        child: Switch(
-          value: AppController.instance.isDartTheme,
-          onChanged: (value) {
-            AppController.instance.changeTheme();
-          },
-        ),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        child:
+            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          Text('Counter: $counter'),
+          CustomSwitcher(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(width: 50, height: 50, color: Colors.indigo),
+              Container(width: 50, height: 50, color: Colors.indigo),
+              Container(width: 50, height: 50, color: Colors.indigo),
+              Container(width: 50, height: 50, color: Colors.indigo),
+              Container(width: 50, height: 50, color: Colors.indigo),
+            ],
+          )
+        ]),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.coronavirus, color: Colors.deepOrange, size: 40.0),
@@ -36,21 +49,14 @@ class HomePageState extends State<HomePage> {
   }
 }
 
-
-// class HomePageState extends State<HomePage> {
-//   int counter = 0;
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       child: Center(
-//           child: GestureDetector(
-//         child: Text('Contador: $counter'),
-//         onTap: () {
-//           setState(() {
-//             counter++;
-//           });
-//         },
-//       )),
-//     );
-//   }
-// }
+class CustomSwitcher extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      value: AppController.instance.isDartTheme,
+      onChanged: (value) {
+        AppController.instance.changeTheme();
+      },
+    );
+  }
+}
