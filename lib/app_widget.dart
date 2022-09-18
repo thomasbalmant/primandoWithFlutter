@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:iniciando/app_controller.dart';
 import 'package:iniciando/login_page.dart';
 
-import 'home_page.dart';
-
 class AppWidget extends StatelessWidget {
+  const AppWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -16,7 +16,7 @@ class AppWidget extends StatelessWidget {
               brightness: AppController.instance.isDartTheme
                   ? Brightness.dark
                   : Brightness.light),
-          home: LoginPage(),
+          home: const LoginPage(),
         );
       },
     );

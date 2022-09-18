@@ -1,8 +1,8 @@
-import 'dart:html';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -19,22 +19,29 @@ class _LoginPageState extends State<LoginPage> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
+              // ignore: prefer_const_constructors
               TextField(
                 keyboardType: TextInputType.emailAddress,
+                // ignore: prefer_const_constructors
                 decoration: InputDecoration(
-                    labelText: 'Email', border: OutlineInputBorder()),
+                    labelText: 'Email', border: const OutlineInputBorder()),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              TextField(
+              const TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Password',
                   border: OutlineInputBorder(),
                 ),
               ),
+              FloatingActionButton(
+                onPressed: () {},
+                tooltip: 'Login',
+                child: const Text('Entrar'),
+              )
             ],
           ),
         ),
