@@ -113,9 +113,7 @@ class _LoginPageState extends State<LoginPage> {
         onPressed: () {
           if (email.isNotEmpty && password.isNotEmpty) {
             // ignore: avoid_print
-            Navigator.of(context).push(
-                // Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => const HomePage()));
+            Navigator.of(context).pushNamed('/home');
           }
         },
         tooltip: 'Login',
