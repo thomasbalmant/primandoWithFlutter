@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 // class LoginPage extends StatefulWidget {
@@ -58,6 +60,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String email = '';
+  String password = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,21 +73,30 @@ class _LoginPageState extends State<LoginPage> {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                const TextField(
+                TextField(
+                    onChanged: (text) {
+                      email = text;
+                    },
                     keyboardType: TextInputType.emailAddress,
+                    // ignore: prefer_const_constructors
                     decoration: InputDecoration(
-                        labelText: 'Email', border: OutlineInputBorder())),
+                        labelText: 'Email',
+                        border: const OutlineInputBorder())),
                 const SizedBox(
                   height: 20,
                 ),
-                const TextField(
+                // ignore: prefer_const_constructors
+                TextField(
+                  onChanged: (text) {
+                    password = text;
+                  },
                   obscureText: true,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       labelText: 'Password', border: OutlineInputBorder()),
                 )
               ],
@@ -96,7 +109,12 @@ class _LoginPageState extends State<LoginPage> {
         child: Container(height: 50.0),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          if (email.isNotEmpty && password.isNotEmpty) {
+            // ignore: avoid_print
+            print('$email e $password');
+          }
+        },
         tooltip: 'Login',
         child: const Text('Login'),
       ),
