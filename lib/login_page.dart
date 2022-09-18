@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:iniciando/home_page.dart';
 
 // class LoginPage extends StatefulWidget {
 //   const LoginPage({super.key});
@@ -112,7 +113,8 @@ class _LoginPageState extends State<LoginPage> {
         onPressed: () {
           if (email.isNotEmpty && password.isNotEmpty) {
             // ignore: avoid_print
-            print('$email e $password');
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const HomePage()));
           }
         },
         tooltip: 'Login',
