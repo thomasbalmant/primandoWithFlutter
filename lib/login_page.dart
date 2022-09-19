@@ -26,6 +26,15 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
+                Container(
+                  width: 100,
+                  height: 100,
+                  child: Image.network(
+                      'https://media1.thehungryjpeg.com/thumbs2/ori_3676696_hnj6rbex565cj4p83zgez7vmw8h58zxtwquveeu0_b-logo.jpg'),
+                ),
+                Container(
+                  height: 20,
+                ),
                 TextField(
                     onChanged: (text) {
                       email = text;
