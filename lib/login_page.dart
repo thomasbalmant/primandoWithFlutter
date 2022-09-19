@@ -29,8 +29,7 @@ class _LoginPageState extends State<LoginPage> {
                 Container(
                   width: 100,
                   height: 100,
-                  child: Image.network(
-                      'https://media1.thehungryjpeg.com/thumbs2/ori_3676696_hnj6rbex565cj4p83zgez7vmw8h58zxtwquveeu0_b-logo.jpg'),
+                  child: Image.asset('assets/images/logo.jpg'),
                 ),
                 Container(
                   height: 20,
