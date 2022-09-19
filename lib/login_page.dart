@@ -25,7 +25,6 @@ class _LoginPageState extends State<LoginPage> {
               Container(
                 width: 100,
                 height: 100,
-                // child: Image.asset('assets/images/logo.jpg'),
               ),
               Container(
                 height: 20,
@@ -78,10 +77,6 @@ class _LoginPageState extends State<LoginPage> {
           _body()
         ],
       ),
-      // bottomNavigationBar: BottomAppBar(
-      //   shape: const CircularNotchedRectangle(),
-      //   child: Container(height: 50.0),
-      // ),
       floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
             if (email.isNotEmpty && password.isNotEmpty) {
