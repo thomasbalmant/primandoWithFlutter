@@ -10,7 +10,6 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   String email = '';
   String password = '';
-
   Widget _body() {
     return SingleChildScrollView(
       child: SizedBox(
@@ -36,7 +35,10 @@ class _LoginPageState extends State<LoginPage> {
                   keyboardType: TextInputType.emailAddress,
                   // ignore: prefer_const_constructors
                   decoration: InputDecoration(
-                      labelText: 'Email', border: const OutlineInputBorder())),
+                    labelText: 'Email',
+                    border: const OutlineInputBorder(),
+                    suffixIcon: Icon(Icons.email),
+                  )),
               const SizedBox(
                 height: 20,
               ),
@@ -47,7 +49,9 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 obscureText: true,
                 decoration: const InputDecoration(
-                    labelText: 'Password', border: OutlineInputBorder()),
+                    suffixIcon: Icon(Icons.remove_red_eye),
+                    labelText: 'Password',
+                    border: OutlineInputBorder()),
               )
             ],
           ),
@@ -81,7 +85,9 @@ class _LoginPageState extends State<LoginPage> {
           onPressed: () {
             if (email.isNotEmpty && password.isNotEmpty) {
               // ignore: avoid_print
-              Navigator.of(context).pushNamed('/home');
+              Navigator.of(context).pushNamed('/txtFields');
+            } else {
+              Navigator.of(context).pushNamed('/txtFields');
             }
           },
           tooltip: 'Login',
