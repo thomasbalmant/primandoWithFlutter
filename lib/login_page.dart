@@ -61,7 +61,9 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text(
+          'Login',
+        ),
         backgroundColor: Colors.black,
       ),
       body: Stack(
@@ -80,17 +82,17 @@ class _LoginPageState extends State<LoginPage> {
       //   shape: const CircularNotchedRectangle(),
       //   child: Container(height: 50.0),
       // ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          if (email.isNotEmpty && password.isNotEmpty) {
-            // ignore: avoid_print
-            Navigator.of(context).pushNamed('/home');
-          }
-        },
-        tooltip: 'Login',
-        child: const Text('Login'),
-        backgroundColor: Colors.pink,
-      ),
+      floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {
+            if (email.isNotEmpty && password.isNotEmpty) {
+              // ignore: avoid_print
+              Navigator.of(context).pushNamed('/home');
+            }
+          },
+          tooltip: 'Login',
+          label: const Text('Apply'),
+          backgroundColor: Colors.pink,
+          icon: const Icon(Icons.login_sharp)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
