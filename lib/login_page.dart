@@ -25,9 +25,9 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(new FocusNode()),
+      onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
       onVerticalDragDown: (value) =>
-          FocusScope.of(context).requestFocus(new FocusNode()),
+          FocusScope.of(context).requestFocus(FocusNode()),
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
@@ -104,11 +104,11 @@ class _LoginPageState extends State<LoginPage> {
       decoration: InputDecoration(
         border: const OutlineInputBorder(),
         enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white, width: 3),
+            borderSide: const BorderSide(color: Colors.white, width: 3),
             borderRadius: BorderRadius.circular(20)),
         labelText: 'Email',
         hintText: 'name@example.com',
-        hintStyle: TextStyle(color: Colors.white),
+        hintStyle: const TextStyle(color: Colors.white),
         prefixIcon: const Icon(Icons.email),
         suffixIcon: emailController.text.isEmpty
             ? Container(width: 0)
