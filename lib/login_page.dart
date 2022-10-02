@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                 title: Text('Disconnect'),
                 subtitle: Text('Login Page'),
                 onTap: () {
-                  Navigator.of(context).pushReplacementNamed('/');
+                  Navigator.of(context).pushNamed('/login');
                 },
               )
             ],
