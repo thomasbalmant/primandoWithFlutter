@@ -79,11 +79,15 @@ class _LoginPageState extends State<LoginPage> {
               Container(
                 height: 20,
               ),
-              buildEmail(),
+              Card(
+                child: buildEmail(),
+              ),
               const SizedBox(
                 height: 20,
               ),
-              buildPassword()
+              Card(
+                child: buildPassword(),
+              )
             ],
           ),
         ),
