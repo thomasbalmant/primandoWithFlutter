@@ -30,10 +30,14 @@ class _LoginPageState extends State<LoginPage> {
           FocusScope.of(context).requestFocus(FocusNode()),
       child: Scaffold(
         drawer: Drawer(
-          backgroundColor: Colors.lightBlueAccent,
           child: Column(
             children: [
-              Container(height: 30),
+              UserAccountsDrawerHeader(
+                currentAccountPicture: Image.network(
+                    'https://avatars.githubusercontent.com/u/60113615?v=4'),
+                accountName: Text('Jhow'),
+                accountEmail: Text('Jhow@jhow.jhow'),
+              ),
               ListTile(
                 leading: Icon(Icons.home),
                 title: Text('Home'),
