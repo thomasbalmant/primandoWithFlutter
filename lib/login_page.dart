@@ -29,7 +29,30 @@ class _LoginPageState extends State<LoginPage> {
       onVerticalDragDown: (value) =>
           FocusScope.of(context).requestFocus(FocusNode()),
       child: Scaffold(
-        drawer: Drawer(),
+        drawer: Drawer(
+          backgroundColor: Colors.lightBlueAccent,
+          child: Column(
+            children: [
+              Container(height: 30),
+              ListTile(
+                leading: Icon(Icons.home),
+                title: Text('Home'),
+                subtitle: Text('Home Page'),
+                onTap: () {
+                  Navigator.of(context).pushNamed('/home');
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.logout),
+                title: Text('Disconnect'),
+                subtitle: Text('Login Page'),
+                onTap: () {
+                  Navigator.of(context).pushReplacementNamed('/');
+                },
+              )
+            ],
+          ),
+        ),
         appBar: AppBar(
           title: const Text(
             'Login',
