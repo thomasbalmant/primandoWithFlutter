@@ -29,6 +29,7 @@ class _LoginPageState extends State<LoginPage> {
       onVerticalDragDown: (value) =>
           FocusScope.of(context).requestFocus(FocusNode()),
       child: Scaffold(
+        drawer: Drawer(),
         appBar: AppBar(
           title: const Text(
             'Login',
