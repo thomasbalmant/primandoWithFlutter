@@ -33,8 +33,11 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: [
               UserAccountsDrawerHeader(
-                currentAccountPicture: Image.network(
-                    'https://avatars.githubusercontent.com/u/60113615?v=4'),
+                currentAccountPicture: ClipRRect(
+                  borderRadius: BorderRadius.circular(40),
+                  child: Image.network(
+                      'https://avatars.githubusercontent.com/u/60113615?v=4'),
+                ),
                 accountName: Text('Jhow'),
                 accountEmail: Text('Jhow@jhow.jhow'),
               ),
